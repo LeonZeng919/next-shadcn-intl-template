@@ -46,7 +46,7 @@ const siteConfigBase: Record<Locale, SiteConfig> = {
     ],
     links: {
       twitter: "https://twitter.com/leonzeng2024",
-      github: "https://github.com/LeonZeng919/next-shadcn-intl-template9",
+      github: "https://github.com/LeonZeng919/next-shadcn-intl-template",
       docs: "/docs",
     },
   },
