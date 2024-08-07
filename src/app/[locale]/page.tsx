@@ -3,12 +3,15 @@ import Link from 'next/link'
 import { getSiteConfig } from '@/config/site-i18n'
 import { buttonVariants } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 export default function IndexPage({
   params: { locale },
 }: {
   params: { locale: string }
 }) {
+  unstable_setRequestLocale(locale)
+
   const t = useTranslations('Index')
   const siteConfig = getSiteConfig(locale)
   return (
