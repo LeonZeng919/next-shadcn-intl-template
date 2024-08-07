@@ -1,4 +1,4 @@
-# NextJS Tailwind ShadCN I18N Starter
+# next-shadcn-intl-template
 
 This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [ShadcnUI](https://ui.shadcn.com/), [NextIntl](https://next-intl-docs.vercel.app/) starter website template. It comes pre-configured with basic i18n, shadcn ui configuration.
 
@@ -17,35 +17,13 @@ I noticed there are certain default configuration that I tend to reuse across di
 
 ## Quick Start Guide
 
-First, clone the repo:
-
-- HTTPS
-
 ```bash
-git clone https://github.com/duy-the-developer/nextjs-tailwind-shadcn-i18n-template.git
-```
-
-- SSH
-
-```bash
-git clone git@github.com:duy-the-developer/nextjs-tailwind-shadcn-i18n-template.git
-```
-
-- GH CLI
-
-```bash
-gh repo clone duy-the-developer/nextjs-tailwind-shadcn-i18n-template
-```
-
-Then, install dependencies and start the development server:
-
-```bash
-cd nextjs-tailwind-shadcn-i18n-template && yarn && yarn dev
+npx create-next-app -e https://github.com/LeonZeng919/next-shadcn-intl-template
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `app/[locale]/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
@@ -53,32 +31,53 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ```bash
 .
+├── LICENSE
+├── README.md
 ├── components.json --> shadcn components config
-├── messages --> i18n messages
-│   ├── en.json
-│   └── fr.json
+├── messages    --> i18n messages
+│   ├── en.json
+│   ├── fr.json
+│   └── zh.json
+├── next-env.d.ts
 ├── next.config.mjs
-├── package.json
 ├── package-lock.json
+├── package.json
 ├── postcss.config.js
 ├── public
-│   ├── next.svg
-│   └── vercel.svg
-├── README.md
+│   ├── next.svg
+│   └── vercel.svg
 ├── src
-│   ├── app
-│   │   ├── layout.tsx
-│   │   └── [locale]
-│   ├── components
-│   │   ├── locale-switcher.tsx
-│   │   └── ui --> components installed from shadcn
-│   ├── i18n.ts --> i18n configs
-│   ├── lib
-│   │   └── utils.ts
-│   ├── middleware.ts --> i18n middleware
-│   ├── navigation.ts --> i18n navigation components exports (ex: Link, useParams, ...etc)
-│   └── styles
-│       └── globals.css --> ui components color configs
+│   ├── app
+│   │   ├── [locale]
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── error.tsx
+│   │   ├── layout.tsx
+│   │   └── not-found.tsx
+│   ├── components
+│   │   ├── icons.tsx
+│   │   ├── language-toggle.tsx
+│   │   ├── main-nav.tsx
+│   │   ├── site-header.tsx
+│   │   ├── tailwind-indicator.tsx
+│   │   ├── theme-provider.tsx
+│   │   ├── theme-toggle.tsx
+│   │   └── ui  --> components installed from shadcn
+│   │       ├── button.tsx
+│   │       ├── dropdown-menu.tsx
+│   │       └── select.tsx
+│   ├── config
+│   │   └── site-i18n.ts
+│   ├── i18n.ts  --> i18n configs
+│   ├── lib
+│   │   ├── fonts.ts
+│   │   └── utils.ts
+│   ├── middleware.ts   --> i18n middleware
+│   ├── navigation.ts   --> i18n navigation components exports (ex: Link, useParams, ...etc)
+│   ├── styles
+│   │   └── globals.css  --> ui components color configs
+│   └── types
+│       └── nav.ts
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── yarn.lock
