@@ -15,6 +15,10 @@ I noticed there are certain default configuration that I tend to reuse across di
 - Auto class sorting with [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - Code formatting with husky pre-commit hook
 
+## Example Website
+
+Check out this [barcode-maker.com](https://barcode-maker.com/) built using this template!
+
 ## Quick Start Guide
 
 ```bash
